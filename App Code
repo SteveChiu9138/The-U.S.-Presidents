@@ -1,0 +1,180 @@
+// Buttons
+// Can access every other screen from any part of the app
+onEvent("Party", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("List", "click", function( ) {
+  setScreen("Listpart1");
+});
+onEvent("FunFacts", "click", function( ) {
+  setScreen("FunFact");
+});
+onEvent("FunFact2", "click", function( ) {
+  setScreen("FunFact");
+});
+onEvent("FunFact3", "click", function( ) {
+  setScreen("FunFact");
+});
+onEvent("FunFact4", "click", function( ) {
+  setScreen("FunFact");
+});
+onEvent("HomeButton", "click", function( ) {
+  setScreen("Home");
+});
+onEvent("Party", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("PartyFunfact", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("HomestatesFun", "click", function( ) {
+  setScreen("States");
+});
+onEvent("Homestates", "click", function( ) {
+  setScreen("States");
+});
+onEvent("listpart2", "click", function( ) {
+  setScreen("ListPart2");
+});
+onEvent("Parties", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("Homestate", "click", function( ) {
+  setScreen("States");
+});
+onEvent("FunPresidentsList", "click", function( ) {
+  setScreen("Listpart1");
+});
+onEvent("homebutton", "click", function( ) {
+  setScreen("Home");
+});
+onEvent("everypoliticalparty", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("Homestatesofuspresidents", "click", function( ) {
+  setScreen("States");
+});
+onEvent("Home2", "click", function( ) {
+  setScreen("Home");
+});
+onEvent("PresidentsList", "click", function( ) {
+  setScreen("Listpart1");
+});
+onEvent("Homestates2", "click", function( ) {
+  setScreen("States");
+});
+onEvent("Home3", "click", function( ) {
+  setScreen("Home");
+});
+onEvent("PoliticalPartiesOfPresidents", "click", function( ) {
+  setScreen("PoliticalParties");
+});
+onEvent("ListofPresidents", "click", function( ) {
+  setScreen("Listpart1");
+});
+onEvent("FunFactButton", "click", function( ) {
+  setScreen("FunFact");
+});
+//Political Parties
+//Each President's respective political party is shown depending on dropdown selection.
+setText("Partyresult", "Independent");
+onEvent("partydropdown", "change", FindParty);
+//Homestates
+//Each President's respective homestate is shown depending on dropdrown selection.
+setText("homestateresults", "Virginia");
+onEvent("Homestatedropdown", "change", FindHomestate);
+//funfacts 
+//A funfact for each U.S. President is shown depending on dropdown selection.
+setText("Funfactresults","This Revolutionary War hero was an enthusiastic dog breeder, particularly of hunting hounds, to which he gave names like “Sweet Lips” and “Drunkard”."); 
+onEvent("funfactdropdown", "change", FindFunFact); 
+//Functions 
+function FindParty() {
+  var Party = ["Independent","Federalist","Democratic-Republican","Democratic-Republican","Democratic-Republican","Democratic-Republican/National Republican","Democratic","Democratic","Whig","Whig","Democratic","Whig","Whig","Democratic","Democratic","Republican/National Union","Democratic/National Union","Republican","Republican","Republican","Republican","Democratic","Republican","Democratic","Republican","Republican","Republican","Democratic","Republican","Republican","Republican","Democratic","Democratic","Republican","Democratic","Democratic","Republican","Republican","Democratic","Republican","Republican","Democratic","Republican","Democratic","Republican","Democratic"];
+  var President = [  "George Washington",  "John Adams",  "Thomas Jefferson",  "James Madison",  "James Monroe",  "John Quincy Adams",  "Andrew Jackson",  "Martin Van Buren",  "William Henry Harrison",  "John Tyler",  "James K. Polk",  "Zachary Taylor",  "Millard Fillmore",  "Franklin Pierce",  "James Buchanan",  "Abraham Lincoln",  "Andrew Johnson",  "Ulysses S. Grant",  "Rutherford B. Hayes",  "James A. Garfield",  "Chester A. Arthur",  "Grover Cleveland",  "Benjamin Harrison",  "Grover Cleveland",  "William McKinley",  "Theodore Roosevelt",  "William Howard Taft",  "Woodrow Wilson",  "Warren G. Harding",  "Calvin Coolidge",  "Herbert Hoover",  "Franklin D. Roosevelt",  "Harry S. Truman",  "Dwight D. Eisenhower",  "John F. Kennedy",  "Lyndon B. Johnson",  "Richard Nixon",  "Gerald Ford",  "Jimmy Carter",  "Ronald Reagan",  "George H. W. Bush",  "Bill Clinton",  "George W. Bush",  "Barack Obama",  "Donald Trump",  "Joseph Biden"];
+  var index = 0;
+  var Presidentselection = getText("partydropdown");
+  for (var i = 0; i < President.length; i++) {
+    if (Presidentselection == President[i]) {
+      index = i;
+      setText("Partyresult", Party[i]);
+    }
+  }
+}
+function FindHomestate() {
+  var Homestate = ["Virginia","Massachusetts", "Virginia","Virginia","Virginia","Massachusetts","Tennessee","New York","Ohio","Virginia","Tennessee","Louisiana","New York", "New Hampshire","Pennsylvania","Illinois", "Tennessee", "Ohio","Ohio","Ohio","New York","New York","Indiana","New York", "Ohio","New York","Ohio","New Jersey", "Ohio","Massachusetts","Iowa","New York","Missouri","Texas","Massachusetts","Texas","California","Michigan","Georgia","California","Texas","Arkansas","Texas","Illinois","New York","Delaware"];
+  var President2 = ["George Washington", "John Adams", "Thomas Jefferson", "James Madison", "James Monroe", "John Quincy Adams", "Andrew Jackson", "Martin Van Buren", "William Henry Harrison", "John Tyler", "James K. Polk", "Zachary Taylor", "Millard Fillmore", "Franklin Pierce", "James Buchanan", "Abraham Lincoln", "Andrew Johnson", "Ulysses S. Grant", "Rutherford B. Hayes", "James A. Garfield", "Chester A. Arthur", "Grover Cleveland", "Benjamin Harrison", "Grover Cleveland", "William McKinley", "Theodore Roosevelt", "William Howard Taft", "Woodrow Wilson", "Warren G. Harding", "Calvin Coolidge", "Herbert Hoover", "Franklin D. Roosevelt", "Harry S. Truman", "Dwight D. Eisenhower", "John F. Kennedy", "Lyndon B. Johnson", "Richard Nixon", "Gerald Ford", "Jimmy Carter", "Ronald Reagan", "George H. W. Bush", "Bill Clinton", "George W. Bush", "Barack Obama", "Donald Trump", "Joseph Biden"];
+  var index2 = 0;
+  var Presidentselection2 = getText("Homestatedropdown");
+  for (var i2 = 0; i2 < President2.length; i2++) {
+      if (Presidentselection2 == President2[i2]) {
+        index2 = i2;
+        setText("homestateresults", Homestate[i2]);
+      }
+    }
+}
+function FindFunFact() {
+var Funfacts = [
+    "This Revolutionary War hero was an enthusiastic dog breeder, particularly of hunting hounds, to which he gave names like “Sweet Lips” and “Drunkard”.",
+    "Adams and his wife, Abigail, exchanged more than 1,100 letters over the course of their lengthy relationship.",
+    "Jefferson, the principal author of the Declaration of Independence, died on July 4, in 1826, within hours of his “frenemy” John Adams.",
+    "Madison was the shortest president at 5’4” and weighed barely over 100 pounds.",
+    "Other than Washington, Monroe was the only president to ever run essentially unopposed, coasting to re-election in the 1820 race.",
+    "Years after leaving the White House, Quincy Adams argued a famous Supreme Court case that freed the captive Africans who had rebelled aboard the Amistad slave ship.",
+    "Jackson once killed a man in a duel.",
+    "Van Buren was the first president to be born an American. All previous presidents were originally British subjects, having been born prior to 1776.",
+    "Harrison lasted only 32 days in office, dying of sickness.",
+    "Tyler fathered 15 children, the most of any president.",
+    "During his term, Polk secretly purchased a number of enslaved children for his cotton plantation.",
+    "Prior to running for office, Taylor had never voted in an election.",
+    "Fillmore did not have a Vice President during his entire term, as it was not constitutionally required.",
+    "The only president from New Hampshire also attended college in Brunswick, Maine.",
+    "In 1853, while serving as minister to Great Britain, Buchanan helped draft the 1854 Ostend Manifesto, which advocated for an American invasion of Cuba.",
+    "Lincoln was the tallest president at 6’4”,he may have had Marfan Syndrome.",
+    "Johnson was the first President to be impeached by the House of Representatives. However, he was acquitted by the Senate.",
+    "Grant was a skilled horseman and was known for his ability to ride and train horses from a young age.",
+    "Hayes was the first President to use a telephone while in office. The White House's first telephone was installed in 1879.",
+    "Garfield was ambidextrous and could write in Greek with one hand while writing in Latin with the other at the same time.",
+    "Arthur was known for his impeccable fashion sense and owned over 80 pairs of pants.",
+    "Cleveland was the first President to get married in the White House.",
+    "Harrison was the first President to have electricity installed in the White House. However, he and his wife were afraid of being electrocuted.",
+    "Cleveland was also the only President to serve two non-consecutive terms.", 
+    "McKinley was the first President to ride in an automobile while in office.",
+    "Roosevelt was the first American to win a Nobel Prize. He won the Nobel Peace Prize in 1906 for his role in negotiating the end of the Russo-Japanese War.",
+    "Taft was the heaviest President, weighing over 300 pounds. A special bathtub had to be installed in the White House to accommodate his size.",
+    "Wilson was the first President to hold a press conference and the first to show a motion picture in the White House.",
+    "Harding was the first President to speak on the radio. He made his first radio broadcast in 1922.",
+    "Coolidge was known for his dry sense of humor. When a woman told him she had bet her friend she could get him to say more than two words, he replied \"You lose.\"",
+    "Hoover and his wife both spoke fluent Mandarin Chinese and would often speak it in the White House to prevent others from eavesdropping on their conversations.",
+    "Roosevelt was the first President to appear on television. He made his television debut in 1939 at the opening of the New York World's Fair.",
+    "Truman was the first President to give a speech that was broadcast on television. He gave the speech in 1947.",
+    "Eisenhower was an accomplished painter and often painted landscapes and portraits in his free time.",
+    "Kennedy was the first President to hold a live televised news conference. He held his first televised news conference in 1961.",
+    "Johnson was known for his love of animals and had several pets while in office, including dogs, hamsters, and lovebirds.",
+    "Nixon was an accomplished musician and could play the piano, accordion, violin, and saxophone.",
+    "Ford was a model in his youth and appeared on the cover of Cosmopolitan magazine in 1942.",
+    "Carter was the first President to be born in a hospital. He was born in the Wise Sanitarium in Plains, Georgia in 1924.",
+    "Reagan was a Hollywood actor before entering politics and appeared in over 50 films.",
+    "Bush was the captain of the Yale University baseball team and played in the first two College World Series in 1947 and 1948.",
+    "Clinton is an accomplished saxophonist and once played Heartbreak Hotel on The Arsenio Hall Show.",
+    "Bush was the head cheerleader at the famous Phillips Academy.",
+    "Obama is a skilled basketball player and had a basketball court installed on the White House grounds.",
+    "Trump is a teetotaler and has never consumed alcohol or smoked cigarettes.",
+    "Biden is famously known for his love of ice cream."
+];
+var President3 = [  "George Washington",  "John Adams",  "Thomas Jefferson",  "James Madison",  "James Monroe",  "John Quincy Adams",  "Andrew Jackson",  "Martin Van Buren",  "William Henry Harrison",  "John Tyler",  "James K. Polk",  "Zachary Taylor",  "Millard Fillmore",  "Franklin Pierce",  "James Buchanan",  "Abraham Lincoln",  "Andrew Johnson",  "Ulysses S. Grant",  "Rutherford B. Hayes",  "James A. Garfield",  "Chester A. Arthur",  "Grover Cleveland",  "Benjamin Harrison",  "Grover Cleveland",  "William McKinley",  "Theodore Roosevelt",  "William Howard Taft",  "Woodrow Wilson",  "Warren G. Harding",  "Calvin Coolidge",  "Herbert Hoover",  "Franklin D. Roosevelt",  "Harry S. Truman",  "Dwight D. Eisenhower",  "John F. Kennedy",  "Lyndon B. Johnson",  "Richard Nixon",  "Gerald Ford",  "Jimmy Carter",  "Ronald Reagan",  "George H. W. Bush",  "Bill Clinton",  "George W. Bush",  "Barack Obama",  "Donald Trump",  "Joseph Biden"];
+var index3 = 0;
+var Presidentselection3 = getText("funfactdropdown");
+for (var i3 = 0; i3 < President3.length; i3++) {
+    if (Presidentselection3 == President3[i3]) {
+      index3 = i3;
+      setText("Funfactresults", Funfacts[i3]);
+    }
+  }
+}
+
+//links to all photos
+// Presidental Seal https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ASeal_of_the_President_of_the_United_States.svg&psig=AOvVaw2AMQNTT5O6dxXMc2j4am-H&ust=1682488850027000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLio5_evxP4CFQAAAAAdAAAAABAE
+// Democratic Logo https://www.google.com/url?sa=i&url=https%3A%2F%2Fnewsforkids.net%2Ffastfacts%2Fdemocratic-party%2F&psig=AOvVaw3OquC41fO1Zy_eBCDs5rHk&ust=1682489562526000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLirgJmwxP4CFQAAAAAdAAAAABAD
+// Republican Logo https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9b%2FRepublicanlogo.svg%2F2359px-Republicanlogo.svg.png&tbnid=FHZbvCctWJAxdM&vet=12ahUKEwjFmsC8sMT-AhUOM0QIHaBXDrwQMygAegUIARCPAQ..i&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ARepublicanlogo.svg&docid=uFOe9VO3-DGMIM&w=2359&h=2048&q=republican%20%20party&safe=active&ved=2ahUKEwjFmsC8sMT-AhUOM0QIHaBXDrwQMygAegUIARCPAQ
+// Democratic-Rebublican Emblem https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6b%2FTricolour_Cockade.svg%2F1200px-Tricolour_Cockade.svg.png&tbnid=G8ixKW-VimFOFM&vet=12ahUKEwigp8TcsMT-AhUEOEQIHYAwC8EQMygAegUIARDoAQ..i&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FDemocratic-Republican_Party&docid=7KjwXjcBWThzzM&w=1200&h=1200&q=democratic%20republican%20party&safe=active&ved=2ahUKEwigp8TcsMT-AhUEOEQIHYAwC8EQMygAegUIARDoAQ
+// Federalist Emblem https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F59%2FFederalist_Cockade.svg%2F1200px-Federalist_Cockade.svg.png&tbnid=lQ9NW5LutQb-vM&vet=12ahUKEwja0LrxsMT-AhU3PUQIHd2TDTIQMygAegUIARDoAQ..i&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFederalist_Party&docid=O6EtSEJJoK_1DM&w=1200&h=1200&q=federalist%20party&safe=active&ved=2ahUKEwja0LrxsMT-AhU3PUQIHd2TDTIQMygAegUIARDoAQ
